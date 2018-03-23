@@ -1,0 +1,2 @@
+class Hiyoko < ApplicationRecord
+end

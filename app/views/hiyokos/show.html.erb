@@ -1,0 +1,10 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/hiyoko_images/#{@hiyoko.image_name}" %>">
+      <h2><%= @hiyoko.name %></h2>
+      <p><%= @hiyoko.email %></p>
+      <%= link_to "編集", edit_hiyoko_path%>
+    </div>
+  </div>
+</div>

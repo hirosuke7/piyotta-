@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Piyotta</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>TweetApp</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("HiyokoApp", "/") %>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <h3><%= link_to("ひよこくらぶ", "/about") %></h3>
+      </li>
+      <li>
+        <h3><%= link_to("投稿一覧", posts_path) %></h3>
+      </li>
+      <li>
+        <h3><%= link_to("新規投稿", new_post_path) %></h3>
+      </li>
+      <li>
+        <%= link_to("ユーザー一覧", hiyokos_path) %>
+      </li>
+      <li>
+        <%= link_to("新規登録", new_hiyoko_path) %>
+      </li>
+    </ul>
+  </header>
+
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+
+  <%= yield %>
+</body>
 </html>

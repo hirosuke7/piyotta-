@@ -1,3 +1,4 @@
+<!-- 指定されたコードを貼り付けてください -->
 <div class="main user-show">
   <div class="container">
     <div class="user">
@@ -5,29 +6,32 @@
       <h2><%= @hiyoko.name %></h2>
       <p><%= @hiyoko.email %></p>
       <% if @hiyoko.id == @current_user.id %>
-      <%= link_to "編集", edit_hiyoko_path%>
-        <%= link_to("削除", "/hiyokos/#{@hiyoko.id}/destroy", {method: "post"}) %>
+        <%= link_to("編集", "/hiyokos/#{@hiyoko.id}/edit") %>
       <% end %>
     </div>
 
     <ul class="user-tabs">
-          <li class="active"><%= link_to("投稿", "/hiyokos/#{@hiyoko.id}") %></li>
-          <li><%= link_to("いいね!", "/hiyokos/#{@hiyoko.id}/likes") %></li>
-        </ul>
+      <li><%= link_to("投稿", "/hiyokos/#{@hiyoko.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/hiyokos/#{@hiyoko.id}/likes") %></li>
+    </ul>
 
+    <!-- 変数@likesに対してeach文を用いてください -->
+    <% @likes.each do |like| %>
+      <!-- 変数postを定義してください -->
+      <% post = Post.find_by(id: like.post_id) %>
 
-    <% @hiyoko.posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
           <img src="<%= "/hiyoko_images/#{post.hiyoko.image_name}" %>">
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= link_to(post.hiyoko.name, "/hiyokos/#{post.hiyoko.id}") %>
+            <%= link_to(post.user.name, "/hiyokos/#{post.hiyoko.id}") %>
           </div>
           <%= link_to(post.content, "/posts/#{post.id}") %>
         </div>
       </div>
+    <!-- each文のendを追加してください -->
     <% end %>
   </div>
 </div>

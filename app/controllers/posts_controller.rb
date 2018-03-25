@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def show

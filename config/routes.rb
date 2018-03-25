@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :hiyokos
   resources :home
-  
+
+  root 'home#top'
 
 
 end

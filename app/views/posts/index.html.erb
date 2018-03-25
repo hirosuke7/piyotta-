@@ -1,0 +1,29 @@
+<div class="main posts-index">
+  <%= search_form_for @q do |f| %>
+  <div class="row">
+    <div class="col-sm-3 col-xs-12">
+      <div class="form-group">
+        <%= f.label :content_cont, 'けんさく' %>
+        <%= f.search_field :content_cont, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+  <div class="container">
+    <% @posts.each do |post| %>
+    <div class="posts-index-item">
+      <div class="post-left">
+        <img src="<%= "/hiyoko_images/#{post.hiyoko.image_name}" %>">
+      </div>
+      <div class="post-right">
+        <div class="post-user-name">
+          <%= link_to(post.hiyoko.name, "/hiyokos/#{post.hiyoko.id}") %>
+        </div>
+        <%= link_to(post.content, "/posts/#{post.id}") %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

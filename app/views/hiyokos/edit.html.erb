@@ -1,0 +1,24 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">へんしゅー</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <!-- エラーメッセージを表示するためのHTMLを貼り付けてください -->
+        <% @hiyoko.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_tag(hiyoko_path(@hiyoko), {multipart: true }) do %>
+          <p>おなまえ</p>
+          <input name="name" value="<%= @hiyoko.name %>">
+          <p>ぴくちゃあ</p>
+          <input name="image" type="file">
+          <p>あどれす</p>
+          <input name="email" value="<%= @hiyoko.email %>">
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

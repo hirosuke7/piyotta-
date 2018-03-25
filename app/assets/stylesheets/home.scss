@@ -18,11 +18,13 @@ ul, li {
 a {
   text-decoration: none;
   color: #2d3133;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: monospace;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+  font-family: monospace;
 }
 
 input {
@@ -181,12 +183,14 @@ header {
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 50px;
 }
 
 .form-heading {
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
+  font-family: monospace;
   color: white;
 }
 
@@ -225,6 +229,7 @@ header {
   margin-top: 8px;
   margin-bottom: 0;
   float: right;
+  border-radius: 10px;
 }
 
 .form-body:after {

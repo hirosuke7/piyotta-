@@ -13,7 +13,7 @@
     <ul class="user-tabs">
           <li class="active"><%= link_to("投稿", "/hiyokos/#{@hiyoko.id}") %></li>
           <li><%= link_to("いいね!", "/hiyokos/#{@hiyoko.id}/likes") %></li>
-        </ul>
+    </ul>
 
 
     <% @hiyoko.posts.each do |post| %>
@@ -25,7 +25,7 @@
           <div class="post-user-name">
             <%= link_to(post.hiyoko.name, "/hiyokos/#{post.hiyoko.id}") %>
           </div>
-          <%= link_to(post.content, "/posts/#{post.id}") %>
+          <%= link_to(post.content, post_path(post)) %>
         </div>
       </div>
     <% end %>

@@ -6,12 +6,12 @@
       <h2><%= @hiyoko.name %></h2>
       <p><%= @hiyoko.email %></p>
       <% if @hiyoko.id == @current_user.id %>
-        <%= link_to("編集", "/hiyokos/#{@hiyoko.id}/edit") %>
+        <%= link_to("へんしゅー", "/hiyokos/#{@hiyoko.id}/edit") %>
       <% end %>
     </div>
 
     <ul class="user-tabs">
-      <li><%= link_to("投稿", "/hiyokos/#{@hiyoko.id}") %></li>
+      <li><%= link_to("つぶやく", "/hiyokos/#{@hiyoko.id}") %></li>
       <li class="active"><%= link_to("いいね!", "/hiyokos/#{@hiyoko.id}/likes") %></li>
     </ul>
 

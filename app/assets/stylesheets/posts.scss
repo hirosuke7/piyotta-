@@ -83,10 +83,11 @@
 
 /* posts/new ================================ */
 .posts-new textarea {
-    padding: 10px;
-    min-height: 201px;
-    border: 10px solid #f8ff7c;
-    resize: none;
+  padding: 10px;
+  min-height: 201px;
+  border: 8px solid #f8ff7c;
+  border-radius: 20px;
+  resize: none;
 }
 
 .posts-new textarea::-webkit-input-placeholder {

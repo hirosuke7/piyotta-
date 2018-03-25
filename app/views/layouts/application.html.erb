@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PiyoApp</title>
+  <title>ぴよった-</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +14,9 @@
   <header>
     <div class="header-logo">
       <% if @current_user %>
-      <%= link_to("PiyoApp", posts_path) %>
+      <%= link_to("ぴよったー", posts_path) %>
       <% else %>
-      <%= link_to("PiyoApp", "/") %>
+      <%= link_to("ぴよったー", "/") %>
       <% end %>
     </div>
     <ul class="header-menus">
@@ -25,26 +25,26 @@
         <%= link_to(@current_user.name, "/hiyokos/#{@current_user.id}") %>
       </li>
       <li>
-        <h3><%= link_to("投稿一覧", posts_path) %></h3>
+        <h3><%= link_to("さえずり", posts_path) %></h3>
       </li>
       <li>
-        <h3><%= link_to("新規投稿", new_post_path) %></h3>
+        <h3><%= link_to("つぶやく", new_post_path) %></h3>
       </li>
       <li>
-        <%= link_to("ユーザー一覧", hiyokos_path) %>
+        <h3><%= link_to("ひよこの友達", hiyokos_path) %></h3>
       </li>
       <li>
-        <%= link_to("ログアウト", "/logout", {method: :post}) %>
+        <h3><%= link_to("かえる", "/logout", {method: :post}) %></h3>
       </li>
       <% else %>
       <li>
-        <h3><%= link_to("ひよこくらぶ", "/about") %></h3>
-      <li>
-          <%= link_to("新規登録", new_hiyoko_path) %>
-      </li>
-      <li>
-          <%= link_to("ログイン", "/login") %>
-      </li>
+        <h3><%= link_to("ひよこくらぶ", about_path) %></h3>
+        <li>
+          <h3><%= link_to("とーろく", new_hiyoko_path) %></h3>
+        </li>
+        <li>
+          <h3><%= link_to("遊びに行く", login_path) %></h3>
+        </li>
         <% end %>
       </ul>
     </header>

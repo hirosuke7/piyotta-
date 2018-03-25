@@ -4,6 +4,7 @@
   margin: 60px 0 20px;
   font-size: 48px;
   color: white;
+  font-family: monospace;
 }
 
 .users-index-item {
@@ -25,6 +26,9 @@
 
 .user-name a {
   font-weight: 600;
+  color: white;
+  text-decoration: underline;
+  font-weight: 200;
 }
 
 .user-name a:hover {
@@ -75,8 +79,9 @@
 }
 
 .user p {
-  font-size: 13px;
+  font-size: 20px;
   margin-bottom: 15px;
+  font-family: monospace;
 }
 
 .user a {

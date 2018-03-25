@@ -1,6 +1,6 @@
 <div class="main users-edit">
   <div class="container">
-    <div class="form-heading">アカウント編集</div>
+    <div class="form-heading">へんしゅー</div>
     <div class="form users-form">
       <div class="form-body">
         <!-- エラーメッセージを表示するためのHTMLを貼り付けてください -->
@@ -9,12 +9,12 @@
             <%= message %>
           </div>
         <% end %>
-        <%= form_tag("/hiyokos/#{@hiyoko.id}/update", {multipart: true }) do %>
-          <p>ユーザー名</p>
+        <%= form_tag(hiyoko_path(@hiyoko), {multipart: true }) do %>
+          <p>おなまえ</p>
           <input name="name" value="<%= @hiyoko.name %>">
-          <p>画像</p>
+          <p>ぴくちゃあ</p>
           <input name="image" type="file">
-          <p>メールアドレス</p>
+          <p>あどれす</p>
           <input name="email" value="<%= @hiyoko.email %>">
           <input type="submit" value="保存">
         <% end %>

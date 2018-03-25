@@ -26,7 +26,7 @@ class HiyokosController < ApplicationController
     if @hiyoko.save
       session[:user_id] = @hiyoko.id
       flash[:notice] = "ユーザー登録が完了しました"
-      redirect_to("/hiyokos/#{@hiyoko.id}")
+      redirect_to hiyoko_path(@hiyoko)
     else
       render("hiyokos/new")
     end
@@ -47,7 +47,7 @@ class HiyokosController < ApplicationController
     end
     if @hiyoko.save
       flash[:notice] = "ユーザー情報を編集しました"
-      redirect_to("/hiyokos/#{@hiyoko.id}")
+      redirect_to hiyoko_path(@hiyoko)
     else
       render("hiyokos/edit")
     end
@@ -57,7 +57,7 @@ class HiyokosController < ApplicationController
     @hiyoko = Hiyoko.find(params[:id])
     @hiyoko.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to("/ hiyokos/index")
+    redirect_to hiyokos_path
   end
 
   def login_form
@@ -80,7 +80,7 @@ class HiyokosController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/login")
+    redirect_to login_path
   end
 
 
@@ -92,7 +92,7 @@ class HiyokosController < ApplicationController
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
-      redirect_to("/posts/index")
+      redirect_to posts_path
     end
   end
 end

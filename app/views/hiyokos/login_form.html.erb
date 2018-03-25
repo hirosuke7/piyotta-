@@ -1,6 +1,6 @@
 <div class="main users-new">
   <div class="container">
-    <div class="form-heading">ログイン</div>
+    <div class="form-heading">遊びに行く</div>
     <div class="form users-form">
       <div class="form-body">
         <% if @error_message %>
@@ -9,11 +9,11 @@
         </div>
         <% end %>
         <%= form_with model: @hiyoko, local: true do |form| %>
-        <p>メールアドレス</p>
+        <p>あどれす</p>
         <input name="email" value="<%= @email %>">
-        <p>パスワード</p>
+        <p>ぱすわーど</p>
         <input type="password" name="password" value="<%= @password %>">
-        <input type="submit" value="ログイン">
+        <input type="submit" value="遊ぶ">
         <% end %>
       </div>
     </div>
